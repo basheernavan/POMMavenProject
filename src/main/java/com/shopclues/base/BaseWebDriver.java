@@ -1,9 +1,13 @@
 package com.shopclues.base;
+import java.util.Set;
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Actions;
 public class BaseWebDriver {
 	public WebDriver driver;
 	
@@ -40,4 +44,22 @@ public class BaseWebDriver {
 	public void closeBrowser(){
 		driver.quit();
 	}
+	
+	public void mouseHover(WebElement element) throws InterruptedException{
+		Actions actions = new Actions(driver);
+		actions.moveToElement(element).build().perform();
+		Thread.sleep(2000);
+	}
+	
+	public void selectNewWindow(){
+		String mainWindow = driver.getWindowHandle();
+		Set<String> handles = driver.getWindowHandles();		
+		for(String windowHandle : handles){
+			if(windowHandle.equals(mainWindow)){
+				driver.switchTo().window(windowHandle);
+			}
+		}
+	}
+	
+	
 }

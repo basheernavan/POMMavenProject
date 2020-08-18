@@ -10,13 +10,14 @@ import com.shopclues.pages.home.LoginPage;
 public class Login extends BaseWebDriver{
 	
 	@Test
-	public void login(){
+	public void login() throws InterruptedException{
 		openBrowser("chrome");
 		navigateUrl("https://www.shopclues.com/");
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		home.clickSinginLink();
+		Thread.sleep(5000);
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
-		home.clickNotifiDontAllow();
+		home.clickNotifiDontAllow();	
 		login.typeEmailAddress("vardhan@admin.com");
 		login.typePassword("test@1234");
 		login.clickLoginButton();

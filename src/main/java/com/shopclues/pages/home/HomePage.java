@@ -33,7 +33,21 @@ public class HomePage extends BaseWebDriver{
 		searchButton.click();
 	}
 	
+	@FindBy(xpath="//*[@id='nav_43']/a") WebElement menMenu;
+	public void menMenuMouseHover() throws InterruptedException{
+		mouseHover(menMenu);
+	}
+	public void clickmenMenu(){
+		menMenu.click();
+	}
+	
+	@FindBy(linkText="Jeans") WebElement menJeans;
+	public void clickMenJeans() throws InterruptedException{
+		menJeans.click();
+	}
 	
 	
+	
+	@FindBy(linkText="//*[text()='WOMEN']") WebElement womenMenu;
 
 }

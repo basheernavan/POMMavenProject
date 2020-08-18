@@ -16,7 +16,7 @@ public class Registration extends BaseWebDriver{
 		navigateUrl("https://www.shopclues.com/");
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		home.clickSinginLink();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		LoginPage login = PageFactory.initElements(driver, LoginPage.class);
 		home.clickNotifiDontAllow();
 		login.clickRegisterTab();
