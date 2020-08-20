@@ -22,6 +22,18 @@ public class MenJeansPage extends BaseWebDriver {
 		sizeSortCheckbox.get(0).click();
 	}
 	
+	@FindBy(xpath="//*[contains(@id, 'det_img_')]") List<WebElement> jeansimages;
+	public void clickJeansImage(){
+		jeansimages.get(0).click();
+	}
+	@FindBy(xpath="//*[contains(@class,'variant')]") WebElement selectSizeInCart;
+	public void clickSizeInCart(){
+		selectSizeInCart.click();
+	}
 	
+	@FindBy(xpath="//*[@id='add_cart']") WebElement cartButton;
+	public void clickCartButton(){
+		cartButton.click();
+	}
 
 }

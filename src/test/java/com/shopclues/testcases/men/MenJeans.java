@@ -15,7 +15,7 @@ public class MenJeans extends BaseWebDriver{
 	public void registration() throws InterruptedException{
 		openBrowser("chrome");
 		navigateUrl("https://www.shopclues.com/");
-		Thread.sleep(8000);		
+		Thread.sleep(12000);		
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		home.clickNotifiDontAllow();
 		Thread.sleep(3000);	
@@ -38,7 +38,27 @@ public class MenJeans extends BaseWebDriver{
 		Thread.sleep(3000);
 		menjeans.clickSizeSortCheckbox();
 		Thread.sleep(3000);		
+		menjeans.clickJeansImage();
+		Thread.sleep(8000);	
+		Set<String> allwindowids1 = driver.getWindowHandles();
+		Iterator<String> iter1 = allwindowids1.iterator();
+		/*while(iter.hasNext()){
+			System.out.println(iter.next());
+		}*/
 		
+		String window1 = iter1.next();
+		String window2 = iter1.next();
+		String window3 = iter1.next();
+		System.out.println("WindowId: "+window1);
+		System.out.println("WindowId: "+window2);
+		System.out.println("WindowId: "+window3);
+		
+		driver.switchTo().window(window3);
+		Thread.sleep(3000);	
+		menjeans.clickSizeInCart();
+		menjeans.clickCartButton();
+		Thread.sleep(3000);	
+		closeBrowser();
 		
 	}
 

@@ -1,5 +1,6 @@
 package com.shopclues.pages.home;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,7 +15,9 @@ public class HomePage extends BaseWebDriver{
 	
 	@FindBy(xpath="//*[contains(@class, 'moe-btn-close')]") WebElement notifiDontAllow;
 	public void clickNotifiDontAllow(){
-		notifiDontAllow.click();
+		if(driver.findElements(By.xpath("//*[contains(@class, 'moe-btn-close')]")).size()>0){
+			notifiDontAllow.click();
+		}
 	}
 	
 	//Declare page element and page methods.
@@ -42,10 +45,14 @@ public class HomePage extends BaseWebDriver{
 	}
 	
 	@FindBy(linkText="Jeans") WebElement menJeans;
-	public void clickMenJeans() throws InterruptedException{
+	public void clickMenJeans(){
 		menJeans.click();
 	}
 	
+	@FindBy(linkText="Sports Shoes") WebElement menSportsShoes;
+	public void clickMenSportsShoes(){
+		menSportsShoes.click();
+	}
 	
 	
 	@FindBy(linkText="//*[text()='WOMEN']") WebElement womenMenu;
