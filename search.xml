@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SearchSuite" >
+<parameter name="browser" value="chrome"></parameter>
+<parameter name="url"	value="https://www.shopclues.com/"></parameter>
+  <test name="SearchTestcases">
+    <classes>
+      <class name="com.shopclues.testcases.search.ItemsInStores"/>
+      <class name="com.shopclues.testcases.search.SearchItems"/>
+    </classes>
+  </test>
+</suite> 

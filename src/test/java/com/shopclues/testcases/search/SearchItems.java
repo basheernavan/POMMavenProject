@@ -13,14 +13,10 @@ import com.shopclues.pages.home.HomePage;
 import com.shopclues.pages.home.LoginPage;
 import com.shopclues.util.GenericFunctions;
 import com.shopclues.util.XLS_Reader;
-
 public class SearchItems extends BaseWebDriver{
 	
 	@Test(dataProvider="getData")
 	public void searchItems(String sitem) throws InterruptedException{
-		openBrowser("chrome");
-		navigateUrl("https://www.shopclues.com/");		
-		Thread.sleep(12000);
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		//clicking on notification alert
 		home.clickNotifiDontAllow();

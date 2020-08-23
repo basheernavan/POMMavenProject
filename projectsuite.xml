@@ -1,0 +1,9 @@
+<!-- this xml file will excute all the xml files which are added in this -->
+<suite name="ProjectSuiteFile">
+	<suite-files>
+		<suite-file path="women.xml"></suite-file>
+		<suite-file path="search.xml"></suite-file>
+		<suite-file path="home.xml"></suite-file>
+		<suite-file path="men.xml"></suite-file>
+	</suite-files>
+</suite>

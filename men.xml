@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="MenSuite" >
+<parameter name="browser" value="chrome"></parameter>
+<parameter name="url"	value="https://www.shopclues.com/"></parameter>
+  <test name="MenTestCases">
+    <classes>
+      <class name="com.shopclues.testcases.men.MenSportsShoes"/>
+      <class name="com.shopclues.testcases.men.MenJeans"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
