@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="WomenSuite" >
+<parameter name="browser" value="chrome"></parameter>
+<parameter name="url"	value="https://www.shopclues.com/"></parameter>
+  <test name="WomenTestcases">
+    <classes>
+      <class name="com.shopclues.testcases.women.Health"/>
+      <class name="com.shopclues.testcases.women.Sneakers"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

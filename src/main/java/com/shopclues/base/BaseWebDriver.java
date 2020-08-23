@@ -8,11 +8,15 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 public class BaseWebDriver {
 	public WebDriver driver;
 	
 	//Open Browser function:
-	public void openBrowser(String browser){
+	@BeforeMethod
+	@Parameters({"browser","url"})
+	public void openBrowser(String browser, String url) throws InterruptedException{
 		if(browser.equalsIgnoreCase("chrome")){
 			System.setProperty("webdriver.chrome.driver", "resources/drivers/chromedriver.exe");
 			driver = new ChromeDriver();
@@ -25,7 +29,9 @@ public class BaseWebDriver {
 		}else if(browser.equalsIgnoreCase("Edge")){
 			System.setProperty("webdriver.ie.driver", "resources/drivers/msedgedriver.exe");
 			driver = new EdgeDriver();	
-		}		
+		}
+		navigateUrl(url);
+		Thread.sleep(10000);
 	}
 	
 	//Navigete url/open url:

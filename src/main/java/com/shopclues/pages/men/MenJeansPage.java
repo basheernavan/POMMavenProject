@@ -13,18 +13,18 @@ public class MenJeansPage extends BaseWebDriver {
 	}
 	
 	@FindBy(xpath="//*[@id='sort_price_fct']/li[*]/label") List<WebElement> priceSortCheckbox;
-	public void clickPriceSortCheckbox(){
-		priceSortCheckbox.get(0).click();
+	public void clickPriceSortCheckbox(int price){
+		priceSortCheckbox.get(price).click();
 	}
 	
 	@FindBy(xpath="//*[@id='option_size-men_lower_fct']/li[*]/label") List<WebElement> sizeSortCheckbox;
-	public void clickSizeSortCheckbox(){
-		sizeSortCheckbox.get(0).click();
+	public void clickSizeSortCheckbox(int size){
+		sizeSortCheckbox.get(size).click();
 	}
 	
 	@FindBy(xpath="//*[contains(@id, 'det_img_')]") List<WebElement> jeansimages;
-	public void clickJeansImage(){
-		jeansimages.get(0).click();
+	public void clickJeansImage(int image){
+		jeansimages.get(image).click();
 	}
 	@FindBy(xpath="//*[contains(@class,'variant')]") WebElement selectSizeInCart;
 	public void clickSizeInCart(){

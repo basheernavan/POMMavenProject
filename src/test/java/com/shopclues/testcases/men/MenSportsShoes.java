@@ -14,9 +14,6 @@ import com.shopclues.pages.men.MenSportsShoesPage;
 public class MenSportsShoes extends BaseWebDriver{
 	@Test
 	public void registration() throws InterruptedException{
-		openBrowser("chrome");
-		navigateUrl("https://www.shopclues.com/");
-		Thread.sleep(12000);		
 		HomePage home = PageFactory.initElements(driver, HomePage.class);
 		home.clickNotifiDontAllow();
 		Thread.sleep(3000);	
